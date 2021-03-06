@@ -37,7 +37,7 @@ describe('mappers specs', () => {
 
   // Como vm y api models son iguales no hago el test para comprobar solamente el mapeo
 
-  it('Should not return empty project if api returns project with data', ()=> {
+  it('Should return project with mapped data from api', ()=> {
     // Arrange
     const apiProject: apiModel.Project = {
       id: '1',
