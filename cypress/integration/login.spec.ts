@@ -33,4 +33,22 @@ describe('Login specs', () => {
     cy.get('@passwordInput').should('have.value', password);
     cy.findByText('Usuario y/o password no válidos').should('exist');
   });
+
+  it('should navigate to submodule list url when type valid credentials', () => {
+    // Arrange
+    const user = 'admin';
+    const password = 'test';
+
+    // Act
+    cy.visit('/');
+    cy.findByLabelText('Usuario *').as('userInput');
+    cy.findByLabelText('Contraseña *').as('passwordInput');
+
+    cy.get('@userInput').type(user);
+    cy.get('@passwordInput').type(password);
+    cy.findByRole('button').click();
+
+    // Assert
+    cy.url().should('eq', 'http://localhost:8080/#/submodule-list');
+  });
 });

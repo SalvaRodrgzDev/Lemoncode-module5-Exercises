@@ -15,6 +15,8 @@
     "test:watch": "npm run test -- --watchAll -i",
     "test:e2e": "npm run start -- start:e2e",
     "start:e2e": "cypress open",
+    "test:e2e:ci": "npm run start -- -r start:e2e:ci",
+    "start:e2e:ci": "cypress run",
     "clean": "rimraf dist"
   },
   "repository": {
@@ -58,10 +60,12 @@
     "@babel/preset-react": "^7.7.4",
     "@babel/preset-typescript": "^7.7.4",
     "@hot-loader/react-dom": "^16.11.0",
+    "@testing-library/dom": "^7.30.0",
     "@testing-library/cypress": "^7.0.4",
     "@testing-library/jest-dom": "^5.11.3",
     "@testing-library/react": "^10.4.8",
-    "@testing-library/react-hooks": "^3.4.1",
+    "@testing-library/react-hooks": "^3.7.0",
+    "@testing-library/user-event": "^12.8.1",
     "@types/jest": "^26.0.10",
     "@types/react": "^16.9.13",
     "@types/react-dom": "^16.9.4",
